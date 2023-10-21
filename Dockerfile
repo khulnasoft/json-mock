@@ -1,8 +1,3 @@
-# syntax=docker/dockerfile:1.2
-
-# Copyright 2023 Authors of KhulnaSoft
-# SPDX-License-Identifier: Apache-2.0
-
 # BUILDPLATFORM is an automatic platform ARG enabled by Docker BuildKit.
 # Represents the plataform where the build is happening, do not mix with
 # TARGETARCH
