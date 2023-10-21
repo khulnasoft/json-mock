@@ -1,6 +1,3 @@
-# Copyright 2017-2020 Authors of KhulnaSoft
-# SPDX-License-Identifier: Apache-2.0
-
 DOCKER_BUILDER := default
 
 # Export with value expected by docker
