@@ -24,10 +24,10 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
 
-      - name: Login to quay.io
+      - name: Login to ghcr.io
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
         with:
-          registry: quay.io
+          registry: ghcr.io
           username: ${{ secrets.QUAY_RELEASE_JSON_MOCK_USERNAME }}
           password: ${{ secrets.QUAY_RELEASE_JSON_MOCK_PASSWORD }}
 
@@ -48,8 +48,8 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            quay.io/${{ github.repository_owner }}/${{ matrix.name }}:${{ steps.tag.outputs.tag }}
-            quay.io/${{ github.repository_owner }}/${{ matrix.name }}-ci:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/${{ matrix.name }}:${{ steps.tag.outputs.tag }}
+            ghcr.io/${{ github.repository_owner }}/${{ matrix.name }}-ci:${{ github.sha }}
 
       - name: Image Release Digest
         shell: bash
@@ -62,7 +62,7 @@ jobs:
 
           echo "### ${{ matrix.name }}" > image-digest/${{ matrix.name }}.txt
           echo "" >> image-digest/${{ matrix.name }}.txt
-          echo "\`quay.io/${{ github.repository_owner }}/${{ matrix.name }}:${{ steps.tag.outputs.tag }}@${{ steps.docker_build_release.outputs.digest }}\`" >> image-digest/${{ matrix.name }}.txt
+          echo "\`ghcr.io/${{ github.repository_owner }}/${{ matrix.name }}:${{ steps.tag.outputs.tag }}@${{ steps.docker_build_release.outputs.digest }}\`" >> image-digest/${{ matrix.name }}.txt
           echo "" >> image-digest/${{ matrix.name }}.txt
 
       # Upload artifact digests
