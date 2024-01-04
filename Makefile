@@ -36,9 +36,9 @@ builder-info: ## Print information about the docker builder that will be used fo
 
 DOCKER_REGISTRY ?= quay.io
 
-# Set DOCKER_DEV_ACCOUNT with "khulnasoft" by default
+# Set DOCKER_DEV_ACCOUNT with "cilium" by default
 ifeq ($(DOCKER_DEV_ACCOUNT),)
-    DOCKER_DEV_ACCOUNT=khulnasoft
+    DOCKER_DEV_ACCOUNT=cilium
 endif
 
 # Set DOCKER_IMAGE_TAG with "latest" by default
@@ -58,7 +58,7 @@ endif
 # $(1) image target name
 # $(2) Docker image context
 # $(3) Dockerfile path
-# $(4) image name stem (e.g., shipyard, shipyard-operator, etc)
+# $(4) image name stem (e.g., cilium, cilium-operator, etc)
 # $(5) image tag
 #
 define DOCKER_IMAGE_TEMPLATE
