@@ -1,5 +1,5 @@
-FROM docker.io/library/node:21.6.0-slim@sha256:e8a7eb273ef8a9ebc03f0ad03c0fd4bbc3562ec244691e6fc37344ee2c4357d2
-RUN npm install -g json-server \
+FROM docker.io/library/node:23.9.0-slim@sha256:dcacc1ee3b03a497c2096b0084d3a67b856e777b55ffccfcc76bcdab9cc65906
+RUN npm install -g json-server@v0.17.4 \
     && apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y curl iproute2 \
