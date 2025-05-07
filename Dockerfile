@@ -1,4 +1,4 @@
-FROM docker.io/library/node:23.9.0-slim@sha256:dcacc1ee3b03a497c2096b0084d3a67b856e777b55ffccfcc76bcdab9cc65906
+FROM docker.io/library/node:24.0.0-slim@sha256:7b0f9cbb3f88da0e67873be5efcf38ce79ea25cfbb4986fad55a446af484e7c9
 RUN npm install -g json-server@v0.17.4 \
     && apt-get update \
     && apt-get upgrade -y \
